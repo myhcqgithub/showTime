@@ -1,0 +1,16 @@
+package top.legend.showtime.base;
+
+/**
+ * Created by hcqi on.
+ * Des:
+ * Date: 2017/7/14
+ */
+
+public interface BasePresenter {
+
+
+    void setupView(BaseView view);
+
+    void destroyPresenter();
+
+}

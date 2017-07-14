@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">showTime</string>
+    <string name="server_ip">http://192.168.0.109:11000/cms/0.0.1/</string>
+</resources>
