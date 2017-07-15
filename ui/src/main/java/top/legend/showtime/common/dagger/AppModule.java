@@ -1,6 +1,11 @@
 package top.legend.showtime.common.dagger;
 
+import javax.inject.Singleton;
+
 import dagger.Module;
+import dagger.Provides;
+import top.legend.showtime.common.ActivityManager;
+import top.legend.showtime.common.IActivityManager;
 
 /**
  * Created by hcqi on.
@@ -9,4 +14,9 @@ import dagger.Module;
  */
 @Module
 public class AppModule {
+    @Provides
+    @Singleton
+    IActivityManager provideActivityManager(ActivityManager activityManager) {
+        return activityManager;
+    }
 }

@@ -3,13 +3,16 @@ package top.legend.showtime;
 import android.app.Application;
 import android.content.Context;
 
+import java.util.Date;
+
 import javax.inject.Inject;
 
-import retrofit2.Retrofit;
 import top.legend.commonlibrary.utils.Logger;
+import top.legend.showtime.common.AppActivityLifecycleCallbacks;
+import top.legend.showtime.common.Durable;
+import top.legend.showtime.common.dagger.AppComponent;
 import top.legend.showtime.common.dagger.AppModule;
 import top.legend.showtime.common.dagger.DaggerAppComponent;
-import top.legend.showtime.common.dagger.DbModule;
 import top.legend.showtime.common.dagger.HttpModule;
 
 
@@ -22,9 +25,10 @@ import top.legend.showtime.common.dagger.HttpModule;
 public class BaseApplication extends Application {
     private static final String TAG = "BaseApplication";
     private static BaseApplication sApplication;
+    private AppComponent mAppComponent;
 
-    @Inject
-    Retrofit mRetrofit;
+    @Inject AppActivityLifecycleCallbacks mActivityLifecycleCallbacks;
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -32,18 +36,25 @@ public class BaseApplication extends Application {
         Logger.init(sApplication, new Logger.LoggerConfig().setGlobalTag(TAG));
         Logger.d(TAG, "Application Init...");
 
-        DaggerAppComponent.builder().httpModule(new HttpModule(this))
+        mAppComponent = DaggerAppComponent.builder().httpModule(new HttpModule(this))
                 .appModule(new AppModule())
-                .dbModule(new DbModule())
-                .build().inject(this);
-        if (mRetrofit!=null) {
+                .build();
+        mAppComponent.inject(this);
 
-        }
+        Durable.setAppComponent(mAppComponent);
+        Durable.setApplication(this);
+        Durable.setAppStartDate(new Date());
 
+
+        registerActivityLifecycleCallbacks(mActivityLifecycleCallbacks);
 
     }
 
     public static Context getApp() {
         return sApplication;
+    }
+
+    public AppComponent getAppComponent() {
+        return mAppComponent;
     }
 }
