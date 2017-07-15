@@ -1,1 +1,1 @@
-include ':ui', ':library', ':commonlibssample', ':http'
+include ':ui', ':library', ':commonlibssample', ':repertory'

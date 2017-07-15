@@ -1,4 +1,4 @@
-package top.legend.commonlibrary;
+package top.legend.commonlibrary.utils;
 
 import android.content.Context;
 import android.os.Environment;

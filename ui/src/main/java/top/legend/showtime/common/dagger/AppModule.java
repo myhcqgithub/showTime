@@ -1,4 +1,4 @@
-package top.legend.showtime.dagger;
+package top.legend.showtime.common.dagger;
 
 import dagger.Module;
 

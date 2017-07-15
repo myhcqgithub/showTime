@@ -1,4 +1,4 @@
-package top.legend.showtime.dagger;
+package top.legend.showtime.common.dagger;
 
 import android.content.Context;
 

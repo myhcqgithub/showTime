@@ -1,4 +1,4 @@
-package top.legend.commonlibrary;
+package top.legend.commonlibrary.utils;
 
 import java.util.List;
 

@@ -6,11 +6,11 @@ import android.content.Context;
 import javax.inject.Inject;
 
 import retrofit2.Retrofit;
-import top.legend.commonlibrary.Logger;
-import top.legend.showtime.dagger.AppModule;
-import top.legend.showtime.dagger.DaggerAppComponent;
-import top.legend.showtime.dagger.DbModule;
-import top.legend.showtime.dagger.HttpModule;
+import top.legend.commonlibrary.utils.Logger;
+import top.legend.showtime.common.dagger.AppModule;
+import top.legend.showtime.common.dagger.DaggerAppComponent;
+import top.legend.showtime.common.dagger.DbModule;
+import top.legend.showtime.common.dagger.HttpModule;
 
 
 /**
@@ -25,7 +25,6 @@ public class BaseApplication extends Application {
 
     @Inject
     Retrofit mRetrofit;
-    @Inject IA mA;
     @Override
     public void onCreate() {
         super.onCreate();
@@ -38,9 +37,6 @@ public class BaseApplication extends Application {
                 .dbModule(new DbModule())
                 .build().inject(this);
         if (mRetrofit!=null) {
-
-        }
-        if (mA!=null) {
 
         }
 

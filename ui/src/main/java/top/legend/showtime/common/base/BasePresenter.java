@@ -1,4 +1,4 @@
-package top.legend.showtime.base;
+package top.legend.showtime.common.base;
 
 /**
  * Created by hcqi on.

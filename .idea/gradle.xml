@@ -9,8 +9,8 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/commonlibssample" />
-            <option value="$PROJECT_DIR$/http" />
             <option value="$PROJECT_DIR$/library" />
+            <option value="$PROJECT_DIR$/repertory" />
             <option value="$PROJECT_DIR$/ui" />
           </set>
         </option>

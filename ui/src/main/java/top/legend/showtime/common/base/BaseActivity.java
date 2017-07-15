@@ -1,15 +1,13 @@
-package top.legend.showtime.base;
+package top.legend.showtime.common.base;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
-import java.util.List;
-
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
-import top.legend.showtime.ActivityDelegate;
-import top.legend.showtime.IViewDelegate;
+import top.legend.showtime.common.ActivityLifeCycleDelegate;
+import top.legend.showtime.common.IViewDelegate;
 
 /**
  * Created by hcqi on.
@@ -20,38 +18,39 @@ import top.legend.showtime.IViewDelegate;
 public abstract class BaseActivity extends AppCompatActivity implements IViewDelegate {
 
     private Unbinder mBind;
+    private ActivityLifeCycleDelegate mLifeCycleDelegate;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mLifeCycleDelegate = new ActivityLifeCycleDelegate(this);
         setContentView(contentLayoutId());
         mBind = ButterKnife.bind(this);
-        ActivityDelegate.create(savedInstanceState);
+        mLifeCycleDelegate.onCreate(savedInstanceState);
     }
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        ActivityDelegate.save(outState);
+        mLifeCycleDelegate.onSaveInstanceState(outState);
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        ActivityDelegate.destroy(mBind, setupPresenter());
+        mLifeCycleDelegate.onDestroy(mBind, setupPresenter());
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        ActivityDelegate.pause();
+        mLifeCycleDelegate.onPause();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        ActivityDelegate.resume();
+        mLifeCycleDelegate.onResume();
     }
 
-    protected abstract List<BasePresenter> setupPresenter();
 }

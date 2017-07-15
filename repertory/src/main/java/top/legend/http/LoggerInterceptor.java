@@ -12,7 +12,7 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 import okhttp3.ResponseBody;
 import okio.Buffer;
-import top.legend.commonlibrary.Logger;
+import top.legend.commonlibrary.utils.Logger;
 
 /**
  * Created by ems on 2017/2/27.
