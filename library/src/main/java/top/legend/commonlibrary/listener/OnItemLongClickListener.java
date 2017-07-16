@@ -1,6 +1,6 @@
 package top.legend.commonlibrary.listener;
 
-import top.legend.commonlibrary.base.DefaultRecyclerAdapter;
+import top.legend.commonlibrary.base.adapter.DefaultAdapter;
 
 /**
  * Created by hcqi on.
@@ -9,5 +9,5 @@ import top.legend.commonlibrary.base.DefaultRecyclerAdapter;
  */
 
 public interface OnItemLongClickListener<D> {
-    boolean onItemLongClick(DefaultRecyclerAdapter adapter, D item, int position);
+    boolean onItemLongClick(DefaultAdapter adapter, D item, int position);
 }

@@ -35,6 +35,7 @@ public abstract class BaseFragment extends Fragment implements IViewDelegate {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         mRootView = inflater.inflate(contentLayoutId(), container, false);
+        mBind = ButterKnife.bind(this, mRootView);
         mLifeCycleDelegate.onCreateView(container, savedInstanceState);
         return mRootView;
     }
@@ -43,7 +44,7 @@ public abstract class BaseFragment extends Fragment implements IViewDelegate {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         mLifeCycleDelegate.onViewCreated(view, savedInstanceState);
-        mBind = ButterKnife.bind(this, view);
+
     }
 
     @Override

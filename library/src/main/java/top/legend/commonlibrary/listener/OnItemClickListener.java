@@ -1,6 +1,6 @@
 package top.legend.commonlibrary.listener;
 
-import top.legend.commonlibrary.base.DefaultRecyclerAdapter;
+import top.legend.commonlibrary.base.adapter.DefaultAdapter;
 
 /**
  * Created by hcqi on.
@@ -10,6 +10,6 @@ import top.legend.commonlibrary.base.DefaultRecyclerAdapter;
 
 public interface OnItemClickListener<D> {
 
-    void onItemClick(DefaultRecyclerAdapter adapter, D item, int position);
+    void onItemClick(DefaultAdapter adapter, D item, int position);
 
 }

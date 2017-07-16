@@ -12,7 +12,6 @@ import android.view.ViewGroup;
 
 public class FragmentLifeCycleDelegate extends ActivityLifeCycleDelegate {
     private static final String TAG = "ActivityLifeCycleDelegate";
-    IViewDelegate mViewDelegate;
 
     public FragmentLifeCycleDelegate(IViewDelegate viewDelegate) {
         super(viewDelegate);
@@ -20,6 +19,10 @@ public class FragmentLifeCycleDelegate extends ActivityLifeCycleDelegate {
 
     public void onCreateView(ViewGroup container, Bundle savedInstanceState) {
 
+    }
+
+    @Override
+    public void onCreate(Bundle bundle) {
     }
 
     public void onViewCreated(View view, Bundle savedInstanceState) {
