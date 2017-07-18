@@ -1,4 +1,4 @@
-package top.legend.showtime.common;
+package top.legend.showtime.common.activity;
 
 import android.app.Activity;
 
@@ -18,7 +18,6 @@ public interface IActivityManager {
     void remove(Class<?> classZ);
 
     void removeAll();
-
 
     Activity find(Class<?> classZ);
 

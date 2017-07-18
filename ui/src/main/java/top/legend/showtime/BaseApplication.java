@@ -8,7 +8,7 @@ import java.util.Date;
 import javax.inject.Inject;
 
 import top.legend.commonlibrary.utils.Logger;
-import top.legend.showtime.common.AppActivityLifecycleCallbacks;
+import top.legend.showtime.common.lifecycle.AppActivityLifecycleCallbacks;
 import top.legend.showtime.common.Durable;
 import top.legend.showtime.common.dagger.AppComponent;
 import top.legend.showtime.common.dagger.AppModule;

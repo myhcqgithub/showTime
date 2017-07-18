@@ -8,7 +8,6 @@ package top.legend.showtime.common.base;
 
 public interface BasePresenter {
 
-
     void setupView(BaseView view);
 
     void destroyPresenter();

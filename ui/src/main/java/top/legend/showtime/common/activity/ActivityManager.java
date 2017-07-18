@@ -1,4 +1,4 @@
-package top.legend.showtime.common;
+package top.legend.showtime.common.activity;
 
 import android.app.Activity;
 

@@ -6,8 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
-import top.legend.showtime.common.ActivityLifeCycleDelegate;
-import top.legend.showtime.common.IViewDelegate;
+import top.legend.showtime.common.lifecycle.ActivityLifeCycleDelegate;
+import top.legend.showtime.common.activity.IViewDelegate;
 
 /**
  * Created by hcqi on.

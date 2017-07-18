@@ -1,4 +1,4 @@
-package top.legend.showtime.common;
+package top.legend.showtime.common.activity;
 
 import java.util.List;
 
@@ -14,8 +14,12 @@ public interface IViewDelegate {
 
     int contentLayoutId();
 
+    void injector();
+
     void initControl();
 
     void initData();
+
+
     List<BasePresenter> setupPresenter();
 }

@@ -9,8 +9,8 @@ import android.view.ViewGroup;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
-import top.legend.showtime.common.FragmentLifeCycleDelegate;
-import top.legend.showtime.common.IViewDelegate;
+import top.legend.showtime.common.lifecycle.FragmentLifeCycleDelegate;
+import top.legend.showtime.common.activity.IViewDelegate;
 
 /**
  * Created by hcqi on.

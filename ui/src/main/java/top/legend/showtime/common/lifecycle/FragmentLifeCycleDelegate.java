@@ -1,8 +1,14 @@
-package top.legend.showtime.common;
+package top.legend.showtime.common.lifecycle;
 
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
+
+import java.util.List;
+
+import butterknife.Unbinder;
+import top.legend.showtime.common.activity.IViewDelegate;
+import top.legend.showtime.common.base.BasePresenter;
 
 /**
  * Created by hcqi on.
@@ -26,11 +32,15 @@ public class FragmentLifeCycleDelegate extends ActivityLifeCycleDelegate {
     }
 
     public void onViewCreated(View view, Bundle savedInstanceState) {
-
         mViewDelegate.initControl();
         mViewDelegate.initData();
     }
 
     public void onDestroyView() {
+    }
+
+    @Override
+    public void onDestroy(Unbinder bind, List<BasePresenter> presenters) {
+        super.onDestroy(bind, presenters);
     }
 }

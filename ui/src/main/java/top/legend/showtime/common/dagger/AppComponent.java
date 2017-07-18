@@ -6,7 +6,7 @@ import dagger.Component;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import top.legend.showtime.BaseApplication;
-import top.legend.showtime.common.IActivityManager;
+import top.legend.showtime.common.activity.IActivityManager;
 
 /**
  * Created by hcqi on.

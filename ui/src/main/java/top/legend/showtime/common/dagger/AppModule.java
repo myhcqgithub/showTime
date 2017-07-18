@@ -4,8 +4,8 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
-import top.legend.showtime.common.ActivityManager;
-import top.legend.showtime.common.IActivityManager;
+import top.legend.showtime.common.activity.ActivityManager;
+import top.legend.showtime.common.activity.IActivityManager;
 
 /**
  * Created by hcqi on.

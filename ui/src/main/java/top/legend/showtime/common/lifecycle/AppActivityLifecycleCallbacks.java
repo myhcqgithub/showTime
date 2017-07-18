@@ -1,10 +1,13 @@
-package top.legend.showtime.common;
+package top.legend.showtime.common.lifecycle;
 
 import android.app.Activity;
 import android.app.Application;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 
 import javax.inject.Inject;
+
+import top.legend.showtime.common.activity.IActivityManager;
 
 /**
  * Created by hcqi on.
@@ -23,6 +26,12 @@ public class AppActivityLifecycleCallbacks implements Application.ActivityLifecy
     @Override
     public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
         mActivityManager.add(activity);
+        if (activity instanceof FragmentActivity) {
+            FragmentActivity fActivity = (FragmentActivity) activity;
+            fActivity.getSupportFragmentManager().registerFragmentLifecycleCallbacks(new AppFragmentLifecycleCallbacks(), true);
+        }
+
+
     }
 
     @Override

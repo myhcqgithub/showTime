@@ -1,4 +1,4 @@
-package top.legend.showtime.common;
+package top.legend.showtime.common.lifecycle;
 
 import android.os.Bundle;
 import android.view.ViewGroup;
@@ -7,6 +7,7 @@ import java.util.List;
 
 import butterknife.Unbinder;
 import top.legend.commonlibrary.utils.Logger;
+import top.legend.showtime.common.activity.IViewDelegate;
 import top.legend.showtime.common.base.BasePresenter;
 
 /**
